@@ -1,0 +1,21 @@
+.navbar{
+    background-color: #fffffe;
+}
+
+.flex{
+    li{
+        margin-left: 2.5rem;
+        font-size: 1.5rem;
+        
+        
+        .header-links{
+            text-decoration: none;
+            color: #2b2c34;
+            font-weight: 700;
+            line-height: 2rem;
+        }
+        .header-active{
+            color: var(--primary);
+        }
+    }
+}
