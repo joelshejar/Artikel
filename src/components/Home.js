@@ -1,8 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import FeedNav from './FeedNav'
+import Posts from './Posts'
+import Pagination from './Pagination'
 
 function Home(){
     return(
+        <>
+        <main>
             <section class="flex container section-one">
                 <article class="hero">
                     <h1>
@@ -17,6 +22,16 @@ function Home(){
                     <img src="/images/hero.png" alt=""/>
                 </div>
             </section>
+            <div>
+                <section className='articles'>
+                    <FeedNav/>
+                    <Posts/>
+                    <Pagination/>
+                </section>
+                
+            </div>
+        </main>
+        </>
     )
 }
 

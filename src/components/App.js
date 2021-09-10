@@ -15,7 +15,6 @@ function App(){
             <Router>
                 <Header/>
                 <Switch>
-                    <main>
                         <Route path='/' exact>
                             <Home/>
                         </Route>
@@ -28,7 +27,6 @@ function App(){
                         <Route path='*' exact>
                             <NoMatch/>
                         </Route>
-                    </main>
                 </Switch>
             </Router>
         </>
