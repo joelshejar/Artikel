@@ -1,0 +1,40 @@
+.tags{
+    width: 55rem;
+    background-color: var(--secondary);
+    margin-left: 2rem;
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        
+        align-items: flex-start;
+        padding: 2rem;
+        h3{
+            display: block;
+            margin-right: 12rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        h4{
+            background-color: var(--primary);
+            padding: 0.5rem 0.75rem;
+            color: white;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            border-radius: 4.1px;
+            cursor: pointer;
+        }
+        .active{
+            color: #e45858;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .hidden{
+            display: none;
+            opacity: 0;
+            color: white;
+        }
+    }
+    
+}

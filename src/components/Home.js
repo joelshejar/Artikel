@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import FeedNav from './FeedNav'
 import Posts from './Posts'
+import Sidebar from './Sidebar.js'
 import Pagination from './Pagination'
 
 function Home(){
@@ -22,11 +23,14 @@ function Home(){
                     <img src="/images/hero.png" alt=""/>
                 </div>
             </section>
-            <div>
+            <div className='container flex flex-home'>
                 <section className='articles'>
                     <FeedNav/>
                     <Posts/>
                     <Pagination/>
+                </section>
+                <section class='tags'>
+                    <Sidebar/>
                 </section>
                 
             </div>

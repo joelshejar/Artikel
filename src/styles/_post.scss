@@ -1,0 +1,55 @@
+.author-img{
+    height: 6rem;
+    border-radius: 50%;
+    width: 6rem;
+    margin-right: 2rem;
+}
+
+.post{
+    background-color: var(--secondary);
+    padding: 2rem 3rem;
+    margin-bottom: 6rem;
+    border-radius: 8px;
+    box-shadow: 8px 13px 22px 6px rgba(163, 104, 104, 0.14);
+}
+.post-author{
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1rem;
+}
+.username-link{
+    text-decoration: none;
+}
+.post-body{
+    margin-top: 2rem;
+    h2{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    p{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+.post-body-link{
+    text-decoration: none;
+    color: black;
+    
+}
+.read-more-btn{
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4.1px;
+    background-color: var(--primary);
+    color: white;
+}
+.like-btn{
+    span{
+        font-size: 1.75rem;
+        margin-left: 0.5rem;
+    }
+}
