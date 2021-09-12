@@ -1,0 +1,15 @@
+.pagination{
+    justify-content: center;
+    h3{
+        background-color: var(--secondary);
+        margin: 0 0.7rem;
+        padding: 0.6rem;
+        border-radius: 50%;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .active-page{
+        background-color: var(--primary);
+        color: white;
+    }
+}

@@ -58,7 +58,7 @@ table {
 
 :root {
   --primary:#6246ea;
-  --secondary:#d1d1e9;
+  --secondary:#ddddf0;
   --tertiary:#e45858;
 }
 
@@ -96,6 +96,10 @@ label {
   background-color: var(--primary);
   padding: 1.3rem 2rem;
   border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #4020e0;
 }
 
 .navbar {
@@ -147,6 +151,29 @@ label {
   line-height: 2.3rem;
 }
 
+.flex-home {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.tags {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  overflow-y: scroll;
+  height: 22.5rem;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  -webkit-box-shadow: 1px 13px 32px 6px rgba(163, 104, 104, 0.17);
+          box-shadow: 1px 13px 32px 6px rgba(163, 104, 104, 0.17);
+}
+
+.tags::-webkit-scrollbar {
+  display: none;
+}
+
 @-webkit-keyframes bouncing-loader {
   to {
     opacity: 0.1;
@@ -190,5 +217,156 @@ label {
 .bouncing-loader > div:nth-child(3) {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
+}
+
+.author-img {
+  height: 6rem;
+  border-radius: 50%;
+  width: 6rem;
+  margin-right: 2rem;
+}
+
+.post {
+  background-color: var(--secondary);
+  padding: 2rem 3rem 2.5rem 3rem;
+  margin-bottom: 6rem;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 22px 6px rgba(163, 104, 104, 0.17);
+          box-shadow: 1px 1px 22px 6px rgba(163, 104, 104, 0.17);
+}
+
+.post-author {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.username-link {
+  text-decoration: none;
+}
+
+.post-body {
+  margin-top: 2rem;
+}
+
+.post-body h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.post-body p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-body-link {
+  text-decoration: none;
+  color: black;
+}
+
+.read-more-btn {
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4.1px;
+  background-color: var(--primary);
+  color: white;
+}
+
+.read-more-btn:hover {
+  background-color: #4020e0;
+}
+
+.like-btn {
+  border: 1px solid gray;
+  -webkit-box-shadow: 8px 13px 22px 0.1px rgba(163, 104, 104, 0.14);
+          box-shadow: 8px 13px 22px 0.1px rgba(163, 104, 104, 0.14);
+  padding: 0.4rem;
+  border-radius: 4.1px;
+}
+
+.like-btn .like-count {
+  margin-left: 0.5rem;
+}
+
+.like-btn span {
+  font-size: 1.75rem;
+}
+
+.tags {
+  width: 55rem;
+  background-color: var(--secondary);
+  margin-left: 2rem;
+  border-radius: 3.5px;
+}
+
+.tags div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 2rem;
+}
+
+.tags div h3 {
+  display: block;
+  margin-right: 12rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.tags div h4 {
+  background-color: var(--primary);
+  padding: 0.5rem 0.75rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border-radius: 4.1px;
+  cursor: pointer;
+}
+
+.tags div h4:hover {
+  background-color: #4020e0;
+}
+
+.tags div .active {
+  color: #e45858;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tags div .hidden {
+  display: none;
+  opacity: 0;
+  color: white;
+}
+
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination h3 {
+  background-color: var(--secondary);
+  margin: 0 0.7rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pagination .active-page {
+  background-color: var(--primary);
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

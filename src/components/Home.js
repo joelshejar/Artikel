@@ -1,10 +1,28 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import { articlesURL } from '../utils/constant'
 import FeedNav from './FeedNav'
 import Posts from './Posts'
+import Sidebar from './Sidebar.js'
 import Pagination from './Pagination'
 
 function Home(){
+    const [articles, setArticles] = useState(null)
+    const [error, setError] = useState('')
+    const [articlesCount, setArticlesCount]=useState(null)
+    const [articlePerPage, setArticlePerPage]=useState(8)
+    const [currentPage, setCurrentPage] = useState(1)
+
+    useEffect(()=>{
+        axios.get(articlesURL+`/?limit=${articlePerPage}&offset=${(currentPage-1)*articlePerPage}`)
+            .then((response)=>{ setArticles(
+                response.data.articles
+            );
+            setArticlesCount(response.data.articlesCount)          
+            }).catch((err)=>setError('Not able to fetch articles!'))
+            console.log('random')
+    },[currentPage,articlePerPage])
     return(
         <>
         <main>
@@ -22,11 +40,14 @@ function Home(){
                     <img src="/images/hero.png" alt=""/>
                 </div>
             </section>
-            <div>
+            <div className='container flex flex-home'>
                 <section className='articles'>
                     <FeedNav/>
-                    <Posts/>
-                    <Pagination/>
+                    <Posts articles={articles} error={error}/>
+                    <Pagination articlesCount={articlesCount} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+                </section>
+                <section class='tags'>
+                    <Sidebar/>
                 </section>
                 
             </div>

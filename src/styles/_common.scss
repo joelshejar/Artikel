@@ -3,7 +3,7 @@
 }
 :root {
     --primary:#6246ea;
-    --secondary:#d1d1e9;
+    --secondary:#ddddf0;
     --tertiary:#e45858;
 }
 .container{
@@ -30,4 +30,7 @@ label{
     background-color: var(--primary);
     padding: 1.3rem 2rem;
     border-radius: 4px;
+    &:hover{
+        background-color: #4020e0;
+    }
 }
