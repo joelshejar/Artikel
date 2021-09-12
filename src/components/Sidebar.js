@@ -16,6 +16,7 @@ function Sidebar(){
         console.log(read)
     }
     useEffect(()=>{
+        
         axios.get(tagsURL)
             .then((response)=>{ setTags(
                 response.data.tags
@@ -32,6 +33,7 @@ function Sidebar(){
     if(!tags){
         return <Loader/>
     }
+    console.log(tags)
     return (<div>
             <h3>Popular Tags</h3>
             {displayTags.map((tag)=>(

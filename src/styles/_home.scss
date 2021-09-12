@@ -21,4 +21,12 @@
 .tags{
     position: sticky;
     top: 1rem;
+    overflow-y: scroll;
+    height: 22.5rem;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    box-shadow: 1px 13px 32px 6px rgba(163, 104, 104, 0.17);
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }

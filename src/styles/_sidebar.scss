@@ -2,6 +2,7 @@
     width: 55rem;
     background-color: var(--secondary);
     margin-left: 2rem;
+    border-radius: 3.5px;
     div{
         display: flex;
         flex-wrap: wrap;
@@ -23,6 +24,9 @@
             margin-right: 1rem;
             border-radius: 4.1px;
             cursor: pointer;
+            &:hover{
+                background-color: #4020e0;
+            }
         }
         .active{
             color: #e45858;

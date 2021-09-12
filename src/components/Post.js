@@ -20,7 +20,7 @@ function Post({...article}){
                 </div>
                 <div className='like-btn'>
                     <span>&hearts;</span>
-                    <span>{article.favoritesCount}</span>
+                    <span className='like-count'>{article.favoritesCount}</span>
                 </div>
             </div>
             <Link className='post-body-link' to='/singlepost'>

@@ -58,7 +58,7 @@ table {
 
 :root {
   --primary:#6246ea;
-  --secondary:#d1d1e9;
+  --secondary:#ddddf0;
   --tertiary:#e45858;
 }
 
@@ -96,6 +96,10 @@ label {
   background-color: var(--primary);
   padding: 1.3rem 2rem;
   border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #4020e0;
 }
 
 .navbar {
@@ -157,6 +161,17 @@ label {
   position: -webkit-sticky;
   position: sticky;
   top: 1rem;
+  overflow-y: scroll;
+  height: 22.5rem;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  -webkit-box-shadow: 1px 13px 32px 6px rgba(163, 104, 104, 0.17);
+          box-shadow: 1px 13px 32px 6px rgba(163, 104, 104, 0.17);
+}
+
+.tags::-webkit-scrollbar {
+  display: none;
 }
 
 @-webkit-keyframes bouncing-loader {
@@ -213,11 +228,11 @@ label {
 
 .post {
   background-color: var(--secondary);
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 2.5rem 3rem;
   margin-bottom: 6rem;
   border-radius: 8px;
-  -webkit-box-shadow: 8px 13px 22px 6px rgba(163, 104, 104, 0.14);
-          box-shadow: 8px 13px 22px 6px rgba(163, 104, 104, 0.14);
+  -webkit-box-shadow: 1px 1px 22px 6px rgba(163, 104, 104, 0.17);
+          box-shadow: 1px 1px 22px 6px rgba(163, 104, 104, 0.17);
 }
 
 .post-author {
@@ -261,15 +276,31 @@ label {
   color: white;
 }
 
+.read-more-btn:hover {
+  background-color: #4020e0;
+}
+
+.like-btn {
+  border: 1px solid gray;
+  -webkit-box-shadow: 8px 13px 22px 0.1px rgba(163, 104, 104, 0.14);
+          box-shadow: 8px 13px 22px 0.1px rgba(163, 104, 104, 0.14);
+  padding: 0.4rem;
+  border-radius: 4.1px;
+}
+
+.like-btn .like-count {
+  margin-left: 0.5rem;
+}
+
 .like-btn span {
   font-size: 1.75rem;
-  margin-left: 0.5rem;
 }
 
 .tags {
   width: 55rem;
   background-color: var(--secondary);
   margin-left: 2rem;
+  border-radius: 3.5px;
 }
 
 .tags div {
@@ -302,6 +333,10 @@ label {
   cursor: pointer;
 }
 
+.tags div h4:hover {
+  background-color: #4020e0;
+}
+
 .tags div .active {
   color: #e45858;
   font-size: 1.3rem;
@@ -312,6 +347,26 @@ label {
 .tags div .hidden {
   display: none;
   opacity: 0;
+  color: white;
+}
+
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination h3 {
+  background-color: var(--secondary);
+  margin: 0 0.7rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pagination .active-page {
+  background-color: var(--primary);
   color: white;
 }
 /*# sourceMappingURL=style.css.map */

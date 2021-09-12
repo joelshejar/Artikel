@@ -7,10 +7,10 @@
 
 .post{
     background-color: var(--secondary);
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 2.5rem 3rem;
     margin-bottom: 6rem;
     border-radius: 8px;
-    box-shadow: 8px 13px 22px 6px rgba(163, 104, 104, 0.14);
+    box-shadow: 1px 1px 22px 6px rgba(163, 104, 104, 0.17);
 }
 .post-author{
     font-size: 2rem;
@@ -46,10 +46,19 @@
     border-radius: 4.1px;
     background-color: var(--primary);
     color: white;
+    &:hover{
+        background-color: #4020e0;
+    }
 }
 .like-btn{
+    border: 1px solid gray;
+    box-shadow: 8px 13px 22px 0.1px rgba(163, 104, 104, 0.14);
+    padding: 0.4rem;
+    border-radius: 4.1px;
+    .like-count{
+        margin-left: 0.5rem;
+    }
     span{
         font-size: 1.75rem;
-        margin-left: 0.5rem;
     }
 }
