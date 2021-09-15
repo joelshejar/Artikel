@@ -10,13 +10,10 @@ function Sidebar(){
     const [error, setError] = useState('')
     const [read, setRead] = useState('active')
     function handleTags(){
-        console.log('hh')
         setDisplayTags(tags.slice(1,tags.length));
         setRead('hidden');
-        console.log(read)
     }
     useEffect(()=>{
-        
         axios.get(tagsURL)
             .then((response)=>{ setTags(
                 response.data.tags
@@ -31,7 +28,7 @@ function Sidebar(){
         return <p>{error}</p>
     }
     if(!tags){
-        return <Loader/>
+        return <Loader className='tags-loader'/>
     }
     console.log(tags)
     return (<div>

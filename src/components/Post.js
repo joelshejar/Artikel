@@ -28,7 +28,7 @@ function Post({...article}){
                     <h2 className='post-title'>
                         {article.title}
                     </h2>
-                    <p className='post-text'>
+                    <p className='post-text' style={{wordBreak:"break-word"}}>
                         {article.description.slice(0,200).concat(' .....')}
                     </p>
                 </div>

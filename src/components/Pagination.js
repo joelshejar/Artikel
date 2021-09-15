@@ -1,19 +1,22 @@
-function Pagination({articlesCount,currentPage, setCurrentPage}){
+function Pagination({articlesCount,currentPage, setCurrentPage, setScrolling}){
     let totalPages=Math.ceil(articlesCount/8)
-    let count=[]
-    for(let i=1;i<totalPages;i++){
-        count[i-1]=i
-    }
     function handleCurrentPage(elm){
         setCurrentPage(elm)
+        setScrolling(true)
     }
+    
     function handlePrev(){
         setCurrentPage(currentPage>1?currentPage-1:1)
+        setScrolling(true)
     }
     function handleNext(){
         setCurrentPage(currentPage<totalPages?currentPage+1:totalPages)
+        setScrolling(true)
     }
-    let exp = [1,2,3,4,5,'...',totalPages]
+    let exp=[1,2,3,4,5,'...',totalPages]
+    if(currentPage<=3){
+        exp=[1,2,3,4,5,'...',totalPages]
+    }
     if(currentPage>3&&currentPage<totalPages-2){
         exp[1]='...'
         exp[2]=currentPage-1
@@ -22,7 +25,7 @@ function Pagination({articlesCount,currentPage, setCurrentPage}){
     }
     if(currentPage>=totalPages-2){
         exp[5]=totalPages-1
-        exp[4]=totalPages-2
+        exp[4]=totalPages-2 
         exp[3]=totalPages-3
         exp[2]=totalPages-4
         exp[1]='...'

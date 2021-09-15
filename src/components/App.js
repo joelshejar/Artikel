@@ -17,6 +17,7 @@ function App(){
                 <Switch>
                         <Route path='/' exact>
                             <Home/>
+
                         </Route>
                         <Route path='/login' exact>
                             <Login/>
@@ -24,7 +25,7 @@ function App(){
                         <Route path='/signup' exact>
                             <Signup/>
                         </Route>
-                        <Route path='*' exact>
+                        <Route path='*'>
                             <NoMatch/>
                         </Route>
                 </Switch>
