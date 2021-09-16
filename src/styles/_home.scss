@@ -15,10 +15,16 @@
         line-height: 2.3rem;
     }
 }
+.hero-img{
+    img{
+        width: 40rem;
+    }
+}
 .flex-home{
     align-items: flex-start;
 }
 .tags{
+    margin-top: 3rem;
     position: sticky;
     top: 1rem;
     overflow-y: scroll;

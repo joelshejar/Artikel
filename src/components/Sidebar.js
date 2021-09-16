@@ -4,19 +4,16 @@ import axios from 'axios'
 import Loader from './Loader.js'
 
 
-function Sidebar(){
+function Sidebar({setActiveTab}){
     const [tags, setTags] = useState(null)
     const [displayTags, setDisplayTags] = useState(tags!==null?tags.slice(1,17):[])
     const [error, setError] = useState('')
     const [read, setRead] = useState('active')
     function handleTags(){
-        console.log('hh')
         setDisplayTags(tags.slice(1,tags.length));
         setRead('hidden');
-        console.log(read)
     }
     useEffect(()=>{
-        
         axios.get(tagsURL)
             .then((response)=>{ setTags(
                 response.data.tags
@@ -26,19 +23,21 @@ function Sidebar(){
             )          
             }).catch((err)=>setError('Not able to fetch tags!'))
     },[])
-    
+    let handleClick=(elm)=>{
+        setActiveTab(elm)
+    }
     if(error){
         return <p>{error}</p>
     }
     if(!tags){
-        return <Loader/>
+        return <Loader className='tags-loader'/>
     }
     console.log(tags)
     return (<div>
             <h3>Popular Tags</h3>
             {displayTags.map((tag)=>(
 
-            <h4 key={tag}>{tag}</h4>
+            <h4 onClick={()=>handleClick(tag)} key={tag}>{tag}</h4>
             ))}
             <h5 className={read==='active'?'active':'hidden'} onClick={()=>handleTags()}>More tags</h5>
             </div>

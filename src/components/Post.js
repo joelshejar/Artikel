@@ -23,17 +23,17 @@ function Post({...article}){
                     <span className='like-count'>{article.favoritesCount}</span>
                 </div>
             </div>
-            <Link className='post-body-link' to='/singlepost'>
+            <Link className='post-body-link' to={`/article/${article.slug}`}>
                 <div className='post-body'>
                     <h2 className='post-title'>
                         {article.title}
                     </h2>
-                    <p className='post-text'>
+                    <p className='post-text' style={{wordBreak:"break-word"}}>
                         {article.description.slice(0,200).concat(' .....')}
                     </p>
                 </div>
             </Link>
-            <Link className='read-more-btn' to='/singlepost'>
+            <Link className='read-more-btn' to={`/article/${article.slug}`}>
                 Read More
             </Link>
         </div>
