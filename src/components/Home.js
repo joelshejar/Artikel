@@ -1,10 +1,11 @@
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import Sidebar from './Sidebar.js'
 import General from './General.js'
 
 
 function Home(){
-    
+    const [activeTab, setActiveTab] = useState('')
     return(
         <>
         <main>
@@ -24,9 +25,9 @@ function Home(){
             </section>
             
             <div className='container flex flex-home'>
-                <General/>                
+                <General activeTab={activeTab} setActiveTab={setActiveTab}/>                
                 <section className='tags'>
-                    <Sidebar/>
+                    <Sidebar activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </section>
                 
             </div>

@@ -1,14 +1,20 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-function FeedNav(){
+function FeedNav({activeTab,setActiveTab}){
+    let handleClick=()=>{
+        setActiveTab('')
+    }
     return(
-        <div>   <div className='flex feed-nav'>
-                    <h5 className='global-field'>Global Field</h5>
-                    <h5 className='global-field'>Global Field</h5>
-                </div>
-                
-                <div className='feed'></div>
+        <div>   
+            <div className='flex feed-nav'>
+                    <NavLink onClick={handleClick} to='/' className={activeTab==='' && 'global-field'}>Global Field</NavLink>
+                    {activeTab&&(
+                    <NavLink to='/' className={activeTab && 'global-field'}># {activeTab}</NavLink>
+                    )}
+                    
+            </div>
+            <div className='feed'></div>
             
         </div>
     )
