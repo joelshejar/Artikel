@@ -33,7 +33,7 @@ function Sidebar({setActiveTab}){
         return <Loader className='tags-loader'/>
     }
     console.log(tags)
-    return (<div>
+    return (<div className='sidebar'>
             <h3>Popular Tags</h3>
             {displayTags.map((tag)=>(
 

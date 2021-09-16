@@ -311,7 +311,7 @@ label {
           flex: 0 0 25rem;
 }
 
-.tags div {
+.tags .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,7 +323,7 @@ label {
   padding: 2rem;
 }
 
-.tags div h3 {
+.tags .sidebar h3 {
   display: block;
   margin-right: 12rem;
   margin-bottom: 1rem;
@@ -331,7 +331,7 @@ label {
   font-weight: 500;
 }
 
-.tags div h4 {
+.tags .sidebar h4 {
   background-color: var(--primary);
   padding: 0.5rem 0.75rem;
   color: white;
@@ -341,18 +341,18 @@ label {
   cursor: pointer;
 }
 
-.tags div h4:hover {
+.tags .sidebar h4:hover {
   background-color: #4020e0;
 }
 
-.tags div .active {
+.tags .sidebar .active {
   color: #e45858;
   font-size: 1.3rem;
   font-weight: 700;
   cursor: pointer;
 }
 
-.tags div .hidden {
+.tags .sidebar .hidden {
   display: none;
   opacity: 0;
   color: white;
