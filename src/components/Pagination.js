@@ -1,3 +1,5 @@
+import Loader from './Loader'
+
 function Pagination({articlesCount,currentPage, setCurrentPage, setScrolling}){
     let totalPages=Math.ceil(articlesCount/8)
     function handleCurrentPage(elm){
@@ -30,7 +32,9 @@ function Pagination({articlesCount,currentPage, setCurrentPage, setScrolling}){
         exp[2]=totalPages-4
         exp[1]='...'
     }
-
+    if(!totalPages){
+        return <Loader/>
+    }
     return(
         <div className='pagination flex'>
             <h3 onClick={handlePrev}>Prev</h3>

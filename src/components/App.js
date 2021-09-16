@@ -7,6 +7,7 @@ import Home from './Home'
 import Signup from './Signup'
 import Login from './Login'
 import NoMatch from './NoMatch'
+import SinglePost from './SinglePost'
 
 function App(){
     return(
@@ -24,6 +25,9 @@ function App(){
                         </Route>
                         <Route path='/signup' exact>
                             <Signup/>
+                        </Route>
+                        <Route path='/article/:slug' component={SinglePost}>
+                            <SinglePost/>
                         </Route>
                         <Route path='*'>
                             <NoMatch/>

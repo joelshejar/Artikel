@@ -1,0 +1,38 @@
+.single-article{
+    h1{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    .article{
+        justify-content: flex-start;
+        div{
+            margin-right: 0.75rem;
+        }
+    }
+}
+.username{
+    margin-bottom: 10px;
+}
+
+.article-body{
+    margin-top: 2rem;
+    line-height: 37px;
+    word-spacing: 4px;
+}
+.author-img{
+    display: flex;
+    align-items: center;
+    img{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 4px;
+    }
+}
+.follow-btn{
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.username{
+    font-weight: 600;
+}

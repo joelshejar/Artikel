@@ -162,6 +162,7 @@ label {
 }
 
 .tags {
+  margin-top: 3rem;
   position: -webkit-sticky;
   position: sticky;
   top: 1rem;
@@ -447,5 +448,78 @@ label {
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.feed {
+  border-bottom: 1px solid gray;
+  margin-bottom: 1rem;
+}
+
+.global-field {
+  width: 6.5rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 3px solid black;
+}
+
+.feed-nav {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.feed-nav h5 {
+  margin-right: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.single-article h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.single-article .article {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.single-article .article div {
+  margin-right: 0.75rem;
+}
+
+.username {
+  margin-bottom: 10px;
+}
+
+.article-body {
+  margin-top: 2rem;
+  line-height: 37px;
+  word-spacing: 4px;
+}
+
+.author-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.author-img img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 4px;
+}
+
+.follow-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.username {
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
