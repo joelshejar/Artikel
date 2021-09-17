@@ -13,7 +13,12 @@
 }
 input{
     display: none;
+    padding-left: 25px;
+    &:focus{
+        outline: var(--primary);
+    }
 }
+
 label{
     display: none;
 }

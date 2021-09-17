@@ -1,11 +1,14 @@
 import React,{useState,} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import {signupURL} from '../utils/constant'
+import axios from 'axios'
 
-function Signup(){
+function Signup({setIsLoggedIn}){
     const [email, setEmail]=useState('')
     const [username, setUserName]=useState('')
     const [password, setPassword]=useState('')
     const [errors, setErrors]=useState({username:'', email:'', password:''})
+    const history = useHistory()
 
     let handleChange = (event)=>{
         let {name, value} = event.target
@@ -33,15 +36,35 @@ function Signup(){
 
     let handleSubmit = (event)=>{
         event.preventDefault()
+        axios.post(signupURL, {
+            "user":{"username":username,
+            "email":email,
+            "password":password}
+        })
+        .then((res)=>{
+            console.log(res.data)
+        })
+        .then((user)=>{console.log(user)
+            setIsLoggedIn(true) 
+            history.push('/')
+            setUserName('')
+            setEmail('')
+            setPassword('')
+        })
+        .catch((err)=>{
+            setErrors({email:err.response.data.errors.email,
+        username:err.response.data.errors.username})
+    })
+        
     }
 
     return(
         <div className='form-div'>
             <form onSubmit={handleSubmit} className='form form-login'>
                 <div className='text-center'>
-                    <legend className='form-legend'>Sign In</legend>
-                    <Link to='/signup' className='form-switch'>
-                        Need an account?
+                    <legend className='form-legend'>Sign Up</legend>
+                    <Link to='/login' className='form-switch'>
+                        Have an account?
                     </Link>
                 </div>
                 <fieldset className='form-group'>
@@ -53,7 +76,7 @@ function Signup(){
                         onChange={handleChange}
                         value={username}
                     />
-                    <span className='error'>{errors.email}</span>
+                    <span className='error'>{errors.username}</span>
                     <input
                         className='form-control'
                         name='email'
@@ -75,8 +98,9 @@ function Signup(){
                     <div className='text-right'>
                         <input
                             className='btn sign-in-btn'
+                            disabled={errors.email || errors.password || errors.username}
                             type='submit'
-                            value='Sign in'
+                            value='Sign up'
                         />
                     </div>
                 </fieldset>

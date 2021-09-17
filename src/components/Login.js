@@ -1,15 +1,18 @@
 import React,{useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import axios from 'axios'
+import {loginURL} from '../utils/constant'
 
-function Login(){
-    const [email, setEmail]=useState('')
-    const [password, setPassword]=useState('')
+
+function Login({setIsLoggedIn, setUser}){
+    const [email, setEmail]=useState('joel.rajesh13@gmail.com')
+    const [password, setPassword]=useState('123456a')
     const [errors, setErrors]=useState({email:'', password:''})
+    let history = useHistory();
 
     let handleChange = (event)=>{
         let {name, value} = event.target
         name==='email'?setEmail(value):setPassword(value)
-        let error= {...errors}
         switch(name){
             case 'email':
                 setErrors({
@@ -24,13 +27,35 @@ function Login(){
                 })
                 break;
             default:
-                return error
+                return errors
         }
         
     }
 
     let handleSubmit = (event)=>{
         event.preventDefault()
+        axios.post(loginURL, {
+            "user":{
+            "email":email,
+            "password":password}
+        })
+        .then((res)=>{
+            console.log(res.data)
+        })
+        .then((user)=>{
+            setIsLoggedIn(true) 
+            history.push('/')
+            setEmail('')
+            setPassword('')
+            
+            
+        })
+        .catch((err)=>{
+            console.dir(err.response)
+            setErrors({email:err.response===undefined?'':err.response.data.errors.email,
+        })
+    })
+        
     }
 
     return(
@@ -64,6 +89,7 @@ function Login(){
                     <div className='text-right'>
                         <input
                             className='btn sign-in-btn'
+                            disabled={errors.email || errors.password}
                             type='submit'
                             value='Sign in'
                         />

@@ -70,6 +70,11 @@ table {
 
 input {
   display: none;
+  padding-left: 25px;
+}
+
+input:focus {
+  outline: var(--primary);
 }
 
 label {

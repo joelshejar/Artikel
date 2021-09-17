@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { BrowserRouter as Router,
          Route,Switch            
 } from 'react-router-dom'
@@ -10,21 +10,25 @@ import NoMatch from './NoMatch'
 import SinglePost from './SinglePost'
 
 function App(){
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [user, setUser] = useState(null)
+    
+    console.log(isLoggedIn)
     return(
         <>
             
             <Router>
-                <Header/>
+                <Header isLoggedIn={isLoggedIn} user={user}/>
                 <Switch>
                         <Route path='/' exact>
                             <Home/>
 
                         </Route>
                         <Route path='/login' exact>
-                            <Login/>
+                            <Login setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
                         </Route>
                         <Route path='/signup' exact>
-                            <Signup/>
+                            <Signup setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
                         </Route>
                         <Route path='/article/:slug' component={SinglePost}>
                             <SinglePost/>
