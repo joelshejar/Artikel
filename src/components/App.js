@@ -24,10 +24,10 @@ function App(){
                             <Home/>
 
                         </Route>
-                        <Route path='/login' exact>
+                        <Route path='/login'>
                             <Login setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
                         </Route>
-                        <Route path='/signup' exact>
+                        <Route path='/signup'>
                             <Signup setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
                         </Route>
                         <Route path='/article/:slug' component={SinglePost}>

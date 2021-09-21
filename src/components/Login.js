@@ -5,8 +5,8 @@ import {loginURL} from '../utils/constant'
 
 
 function Login({setIsLoggedIn, setUser}){
-    const [email, setEmail]=useState('joel.rajesh13@gmail.com')
-    const [password, setPassword]=useState('123456a')
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
     const [errors, setErrors]=useState({email:'', password:''})
     let history = useHistory();
 
@@ -41,17 +41,17 @@ function Login({setIsLoggedIn, setUser}){
         })
         .then((res)=>{
             console.log(res.data)
+            
         })
-        .then((user)=>{
+        .then((res)=>{
             setIsLoggedIn(true) 
             history.push('/')
+            setUser(res)
             setEmail('')
             setPassword('')
-            
-            
         })
         .catch((err)=>{
-            console.dir(err.response)
+            console.dir(err.response.data.errors)
             setErrors({email:err.response===undefined?'':err.response.data.errors.email,
         })
     })
